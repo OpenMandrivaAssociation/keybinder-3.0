@@ -9,7 +9,7 @@
 
 Name:           keybinder3.0
 Version:        0.3.2
-Release:        1
+Release:        2
 Summary:        A library for registering global keyboard shortcuts
 License:        X11 License
 Group:          Development/GNOME and GTK+
@@ -53,13 +53,13 @@ This package contains header files needed when building applications based on
 %setup -q -n %{oname}-%{api}-%{version}
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
 	--enable-introspection=yes
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # don't ship .la
 find %{buildroot} -name '*.la' -delete
